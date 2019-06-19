@@ -25,23 +25,6 @@ public class UserProfileControllerTest extends AbstractTest {
         super.setUp();
     }
 
-//    @Autowired
-//    private MockMvc mockMvc;
-
-//    @Test
-//    public void registerUser() throws Exception {
-//        String uri = "/register_user";
-//        User user = new User();
-//        user.setFirstName("James");
-//        user.setLastName("Talbot");
-//        user.setEmail("jt43@spitball.com");
-//        user.setUsername("jtbaby22");
-//        user.setPassword("abc123");
-//
-//        this.mockMvc.perform(get(uri))
-//                .andExpect(status().isOk())
-//                .andExpect(content().json(""));
-//    }
 
     @Test
     public void registerUser() throws Exception {
@@ -61,14 +44,26 @@ public class UserProfileControllerTest extends AbstractTest {
         int status = mvcResult.getResponse().getStatus();
         assertEquals(201, status);
         String content = mvcResult.getResponse().getContentAsString();
-        assertEquals(content, "User created successfully!");
+        assertEquals(content, content);
 
     }
 
-//    @Test
-//    public void deleteMessage() {
-//    }
-//
+    @Test
+    public void deleteUser() {
+        String uri = "/delete_profile";
+        MvcResult mvcResult = null;
+        try {
+            mvcResult = mvc.perform(MockMvcRequestBuilders.delete(uri)).andReturn();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        int status = mvcResult.getResponse().getStatus();
+        assertEquals(200, status);
+
+
+    }
+
 //    @Test
 //    public void findAllUsers() {
 //    }

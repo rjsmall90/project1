@@ -17,7 +17,7 @@ public class UserProfileController {
 
     @RequestMapping(value = "/register_user", method = RequestMethod.POST)
     public ResponseEntity<User> registerUser(@RequestBody User newUser) {
-        git commit//newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
+        //newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
         newUser = userService.save(newUser);
         HttpStatus status = HttpStatus.CREATED;
 
@@ -25,7 +25,7 @@ public class UserProfileController {
     }
 
     @RequestMapping(value = "/delete_profile", method = RequestMethod.DELETE)
-    public ResponseEntity<User> deleteMessage(@RequestBody User user) {
+    public ResponseEntity<User> deleteUser(@RequestBody User user) {
         userService.delete(user);
         return new ResponseEntity<>(HttpStatus.OK);
     }
