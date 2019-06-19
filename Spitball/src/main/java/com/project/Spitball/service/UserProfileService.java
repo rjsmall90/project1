@@ -5,6 +5,9 @@ import com.project.Spitball.repo.UserProfileRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class UserProfileService {
 
@@ -23,11 +26,14 @@ public class UserProfileService {
         userRepository.delete(user);
     }
 
-//    public User findEmail(String email) {
-//        return userRepository.findByEmail(email);
-//    }
+    public User findEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 
     public User find(Long id) {
         return userRepository.findById(id).get();
     }
+
+    public List<User> findAll() { return userRepository.findAll(); }
+
 }
