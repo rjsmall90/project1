@@ -34,9 +34,9 @@ public class TeacherProfileController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/find_all", method = RequestMethod.GET)
-    public ResponseEntity<Teacher> findAllUsers() {
-        HttpStatus httpStatus = HttpStatus.OK;
-        return new ResponseEntity<Teacher>((Teacher) teacherService.findAll(), httpStatus);
-    }
+//    @RequestMapping(value = "/find_all", method = RequestMethod.GET)
+//    public ResponseEntity<Teacher> findAllUsers() {
+//        HttpStatus httpStatus = HttpStatus.OK;
+//        return new ResponseEntity<Teacher>((Teacher) teacherService.findAll(), httpStatus);
+//    }
 }
