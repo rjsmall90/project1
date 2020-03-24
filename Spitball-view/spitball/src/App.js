@@ -2,15 +2,17 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Registration from './component/registration/registration';
+import UserRegistration from './component/user/userRegistration';
 import User from './component/user/user'; 
+import Schools from './component/schools/schools';
 
 function App() {
   return (
     <div className="App">
         <img src={logo} className="App-logo" alt="logo" />
-      <Registration />
-      <User /> 
+      <UserRegistration />
+      {/* <User />  */}
+      <Schools /> 
     </div>
   );
 }

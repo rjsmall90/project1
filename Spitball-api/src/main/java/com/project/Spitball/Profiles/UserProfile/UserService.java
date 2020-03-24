@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -18,6 +20,10 @@ public class UserService {
     public void delete(User user) {
          repo.delete(user);
     }
+
+    public List<User> all() { return repo.findAll(); }
+
+
 
 
 }

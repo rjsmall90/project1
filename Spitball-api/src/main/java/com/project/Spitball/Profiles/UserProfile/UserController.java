@@ -6,6 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("user_profile")
 @CrossOrigin
@@ -30,6 +33,16 @@ public class UserController {
     @DeleteMapping(value="/delete_user")
     public void deleteUser() {
         service.delete(user);
+    }
+
+    @GetMapping(value="/find_user")
+    public User findUser() {
+        return user;
+    }
+
+    @GetMapping(value="/retrieve_users")
+    public List<User> getUsers() {
+        return service.all();
     }
 
 
